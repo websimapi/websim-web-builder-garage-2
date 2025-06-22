@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    background-color: #ffd900;
+    color: #333;
+    overflow: hidden;
+}
+
+#splash-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.background-characters {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background_characters.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    color: #1a237e;
+    text-shadow: 4px 4px 0 #ffffff, 6px 6px 0 rgba(0,0,0,0.2);
+    margin: 0 0 40px 0;
+}
+
+.title-g-container {
+    display: inline-block;
+    position: relative;
+}
+
+.title-g {
+    position: relative;
+    display: inline-block;
+}
+
+.title-g::before, .title-g::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #1a237e;
+    box-sizing: border-box;
+}
+
+.title-g::before { /* Left eye */
+    width: 22%;
+    height: 22%;
+    top: 35%;
+    left: 20%;
+}
+
+.title-g::after { /* Right eye */
+    width: 22%;
+    height: 22%;
+    top: 35%;
+    right: 20%;
+}
+
+/* Pupils */
+.title-g::before::before, .title-g::after::before {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background-color: #1a237e;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn {
+    font-family: 'Fredoka', sans-serif;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: 4px solid #1a237e;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.interactive-lessons {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 0 15px 5px rgba(76, 175, 80, 0.7);
+    animation: glow 1.5s infinite alternate;
+}
+
+.interactive-lessons:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px 8px rgba(76, 175, 80, 0.8);
+}
+
+.checkmark {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 15px 5px rgba(76, 175, 80, 0.6);
+    }
+    to {
+        box-shadow: 0 0 25px 10px rgba(76, 175, 80, 0.9);
+    }
+}
+
+.free-programming {
+    background-color: #bdbdbd;
+    color: #757575;
+    border-color: #757575;
+    cursor: not-allowed;
+}
+
+.confirm-prompt {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 4px solid #1a237e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a237e;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
